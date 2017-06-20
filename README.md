@@ -7,6 +7,8 @@ CGI-обёртка для утилиты tool_1CD.
 В Apache в httpd.conf нужно прописать:
 ```
 
+LoadModule cgi_module modules/mod_cgi.so
+
 # Где будут лежать наши CGI
 Alias "/oscgi/" "C:/opt/oscgi"
 ScriptAlias "/oscgi-bin/" "C:/opt/oscript/bin/"  # тут путь к установленному ОдноСкрипту
@@ -17,6 +19,7 @@ ScriptAlias "/oscgi-bin/" "C:/opt/oscript/bin/"  # тут путь к устан
 
 
 LoadModule actions_module modules/mod_actions.so
+
 Alias "/rep" "C:/1C/Rep/"          # Алиас для доступа
 <Directory "C:/1C/Rep/Retail">     # Каталог хранилища
 	Allow from all
